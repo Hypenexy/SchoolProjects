@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html style="background: #111" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Program</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="time">
+        <ati>Time</ati>
+        <div class="options">
+            <btn id="firstshiftbtn"><span class="material-icons">&#xe518;</span>1st shift</btn>
+            <btn id="secondshiftbtn"><span class="material-icons">&#xf036;</span>2nd shift</btn>
+        </div>
+        <btn id="optionsbtn"><span class="material-icons">&#xe8b8;</span>Options</btn>
+        <btn id="classroombtn"><span class="material-icons">&#xe80c;</span>Classroom</btn>
+        <div class="times" id="firstshift">
+            <a>1. 08:00 - 08:35</a>
+            <a>2. 08:45 - 09:20</a>
+            <a>3. 09:30 - 10:05</a>
+            <a>4. 10:25 - 11:00</a>
+            <a>5. 11:10 - 11:45</a>
+            <a>6. 11:55 - 12:30</a>
+            <a>7. 12:40 - 13:15</a>
+        </div>
+        <div class="times" id="secondshift">
+            <a>1. 13:20 - 13:55</a>
+            <a>2. 14:10 - 14:45</a>
+            <a>3. 15:00 - 15:35</a>
+            <a>4. 16:00 - 16:35</a>
+            <a>5. 16:50 - 17:35</a>
+            <a>6. 17:35 - 18:10</a>
+            <a>7. 18:20 - 18:55</a>
+        </div>
+        <a class="ada" target="_blank" href="https://writenote.midelight.net">
+        <div class="ad">
+            <img src="https://midelight.net/WriteNoteApp/writenotetray.png"><at>WriteNote</at><ade style="font-size: 24px">An online text editor. Write on the go.</ade><btn>Try Out</btn><ad style="font-size: 16px">Ad</ad>
+        </div>
+        </a>
+    </div>
+    <div class="classes">
+        <sect style="width: 35px; flex: 0;color: #eee">
+            <a>&nbsp;</a>
+            <b>1.</b>
+            <b>2.</b>
+            <b>3.</b>
+            <b>4.</b>
+            <b>5.</b>
+            <b>6.</b>
+            <b>7.</b>
+            <b>8.</b>
+        </sect>
+        <hr>
+        <sect>
+            <day>Monday</day>
+            <a>2nd Foreign Language</a>
+            <a>Philosophy</a>
+            <a>Bulgarian</a>
+            <a>Geography</a>
+            <a>Physics</a>
+            <a>Biology</a>
+            <a>Maths</a>
+            <a>Maths</a>
+        </sect>
+        <sect>
+            <day>Tuesday</day>
+            <a>Bulgarian</a>
+            <a>Maths</a>
+            <a>PE</a>
+            <a>Programming</a>
+            <a>Programming</a>
+            <a>History</a>
+            <a>Philosophy</a>
+        </sect>
+        <sect>
+            <day>Wednesday</day>
+            <a>Programming</a>
+            <a>Programming</a>
+            <a>English</a>
+            <a>Music</a>
+            <a>History</a>
+            <a>Chemistry</a>
+            <a>Geography</a>
+        </sect>
+        <sect>
+            <day>Thursday</day>
+            <a>Maths</a>
+            <a>Physics</a>
+            <a>Bulgarian</a>
+            <a>Biology</a>
+            <a>Programming</a>
+            <a>History</a>
+            <a>2nd Foreign Language</a>
+        </sect>
+        <sect>
+            <day>Friday</day>
+            <a>Maths</a>
+            <a>Maths</a>
+            <a>Geography</a>
+            <a>History</a>
+            <a>PE</a>
+            <a>English</a>
+            <a>Chemistry</a>
+            <a>Class Hour</a>
+        </sect>
+    </div>
+    <div id="modal">
+        <div id="panelsettings">
+            <h1>Options</h1>
+        </div>
+        <x onclick="hideAll()">×</x>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
