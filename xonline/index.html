@@ -10,7 +10,8 @@
 </head>
 <body>
     <div class="time">
-        <ati>Time</ati>
+        <ati>Schedule</ati>
+        <actime id="clock">0:00</actime>
         <div class="options">
             <btn id="firstshiftbtn"><span class="material-icons">&#xe518;</span>1st shift</btn>
             <btn id="secondshiftbtn"><span class="material-icons">&#xf036;</span>2nd shift</btn>
@@ -43,7 +44,7 @@
     </div>
     <div class="classes">
         <sect style="width: 35px; flex: 0;color: #eee">
-            <a>&nbsp;</a>
+            <b>&nbsp;</b>
             <b>1.</b>
             <b>2.</b>
             <b>3.</b>
@@ -54,62 +55,73 @@
             <b>8.</b>
         </sect>
         <hr>
-        <sect>
+        <sect id="mon">
             <day>Monday</day>
-            <a>2nd Foreign Language</a>
-            <a>Philosophy</a>
-            <a>Bulgarian</a>
-            <a>Geography</a>
-            <a>Physics</a>
-            <a>Biology</a>
-            <a>Maths</a>
-            <a>Maths</a>
+            <a onclick="openMeet('368 318 398')">2nd Foreign Language</a>
+            <a onclick="openMeet('uas-pagz-qzx')">Philosophy</a>
+            <a onclick="openMeet('')">Bulgarian</a>
+            <a onclick="openMeet('')">Geography</a>
+            <a onclick="openMeet('')">Physics</a>
+            <a onclick="openMeet('')">Biology</a>
+            <a onclick="openMeet('')">Maths</a>
+            <a onclick="openMeet('')">Maths</a>
         </sect>
-        <sect>
+        <sect id="tue">
             <day>Tuesday</day>
-            <a>Bulgarian</a>
-            <a>Maths</a>
-            <a>PE</a>
-            <a>Programming</a>
-            <a>Programming</a>
-            <a>History</a>
-            <a>Philosophy</a>
+            <a onclick="openMeet('')">Bulgarian</a>
+            <a onclick="openMeet('')">Maths</a>
+            <a onclick="openMeet('')">PE</a>
+            <a onclick="openMeet('')">Programming</a>
+            <a onclick="openMeet('')">Programming</a>
+            <a onclick="openMeet('')">History</a>
+            <a onclick="openMeet('')">Philosophy</a>
         </sect>
-        <sect>
+        <sect id="wed">
             <day>Wednesday</day>
-            <a>Programming</a>
-            <a>Programming</a>
-            <a>English</a>
-            <a>Music</a>
-            <a>History</a>
-            <a>Chemistry</a>
-            <a>Geography</a>
+            <a onclick="openMeet('')">Programming</a>
+            <a onclick="openMeet('')">Programming</a>
+            <a onclick="openMeet('')">English</a>
+            <a onclick="openMeet('')">Music</a>
+            <a onclick="openMeet('')">History</a>
+            <a onclick="openMeet('')">Chemistry</a>
+            <a onclick="openMeet('')">Geography</a>
         </sect>
-        <sect>
+        <sect id="thu">
             <day>Thursday</day>
-            <a>Maths</a>
-            <a>Physics</a>
-            <a>Bulgarian</a>
-            <a>Biology</a>
-            <a>Programming</a>
-            <a>History</a>
-            <a>2nd Foreign Language</a>
+            <a onclick="openMeet('')">Maths</a>
+            <a onclick="openMeet('')">Physics</a>
+            <a onclick="openMeet('')">Bulgarian</a>
+            <a onclick="openMeet('')">Biology</a>
+            <a onclick="openMeet('')">Programming</a>
+            <a onclick="openMeet('')">History</a>
+            <a onclick="openMeet('')">2nd Foreign Language</a>
         </sect>
-        <sect>
+        <sect id="fri">
             <day>Friday</day>
-            <a>Maths</a>
-            <a>Maths</a>
-            <a>Geography</a>
-            <a>History</a>
-            <a>PE</a>
-            <a>English</a>
-            <a>Chemistry</a>
-            <a>Class Hour</a>
+            <a onclick="openMeet('')">Maths</a>
+            <a onclick="openMeet('')">Maths</a>
+            <a onclick="openMeet('')">Geography</a>
+            <a onclick="openMeet('')">History</a>
+            <a onclick="openMeet('')">PE</a>
+            <a onclick="openMeet('')">English</a>
+            <a onclick="openMeet('')">Chemistry</a>
+            <a onclick="openMeet('')">Class Hour</a>
         </sect>
     </div>
+
     <div id="modal">
         <div id="panelsettings">
             <h1>Options</h1>
+            <label>
+                Show only current day of week <input id="dayoption" type="checkbox">
+            </label>
+            <label>
+                Open links in a new tab <input id="linkoption" type="checkbox">
+            </label>
+            <label>
+                Use different authorizer <input id="authoption" value="0" min="0" max="99" type="number">
+            </label>
+            <a id="cleardata">Clear all settings</a>
         </div>
         <x onclick="hideAll()">×</x>
     </div>
