@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{margin: 0; font-family: sans-serif; box-sizing: border-box; outline:0}
+        body{
+            background: #111;
+            color: #eee;
+        }
+        .centeredContainer{
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        input{
+            background: initial;
+            color: ivory;
+            font-size: 24px;
+            padding: 12px;
+            border-radius: 12px;
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #555;
+        }
+        input:focus{
+            border: 1px solid ivory;
+            box-shadow: 2px 2px 2px #555;
+        }
+        input.error{
+            border: 1px solid coral;
+        }
+        input.error:focus{
+            border: 1px solid crimson;
+            box-shadow: 0 0 3px coral;
+        }
+
+        #calculatorPreview, #calculatorOutput div{
+            background: #333;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        #calculatorPreview{
+            display: inline-block;
+            min-width: 100px;
+        }
+        #calculatorPreview p{
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="centeredContainer">
+        <input id="calculatorInput">
+        <div id="calculatorPreview"></div>
+        <div id="calculatorOutput"></div>
+    </div>
+    <script>
+        var calculatorInput = document.getElementById("calculatorInput")
+        var calculatorPreview = document.getElementById("calculatorPreview")
+        var calculatorOutput = document.getElementById("calculatorOutput")
+        calculatorInput.placeholder = "Enter a math equation (or JS code)"
+        function getResult(inputElement, shouldClear){
+            var result
+            try {
+                if(inputElement.classList[0] == "error"){
+                    inputElement.classList.remove("error")
+                }
+                result = eval(inputElement.value)
+            } catch (error) {
+                result = "Syntax Error"
+                inputElement.classList.add("error")
+            }
+            if(shouldClear){
+                this.value = ""
+                inputElement.classList.remove("error")
+            }
+            return result
+        }
+        calculatorInput.addEventListener("input", function(){
+            calculatorPreview.innerHTML = "<p>Preview</p>" + getResult(this)
+        })
+        calculatorInput.addEventListener("keydown", function(e){
+            if(e.key == "Enter"){
+                e.preventDefault()
+                var result = getResult(this)
+                if(result.toString() != "undefined"){
+                    var resultElement = document.createElement("div")
+                    resultElement.innerHTML = getResult(this, true)
+                    calculatorOutput.prepend(resultElement)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

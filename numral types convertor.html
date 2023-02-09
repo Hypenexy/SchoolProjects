@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data stuff</title>
+    <style>
+        *{box-sizing: border-box; font-family: sans-serif; margin: 0; outline: 0;}
+        body{
+            background: #111;
+            color: #eee;
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1{
+            color: #bbb;
+            margin: 20px 0;
+        }
+
+        input{
+            padding: 12px;
+            background: initial;
+            border: 1px solid #666;
+            color: #fff;
+            border-radius: 12px;
+        }
+
+        #output{
+            background: #222;
+            padding: 12px;
+            width: 194px;
+            height: 40px;
+            margin-top: 10px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mdblock">
+        <h1>Numeral types convertor</h1>
+        <input id="input">
+        <div id="output"></div>
+    </div>
+    <script>
+        var input = document.getElementById("input")
+        var output = document.getElementById("output")
+        
+        // input.addEventListener("keydown", function(e){
+        //     if(e.key == "Enter"){
+
+        //     }
+        // })
+
+        input.addEventListener("input", function(){
+            output.innerText = convert(2, 10, this.value)
+        })
+
+        //Това е функцията за промяната
+        function convert(fromType, toType, number){
+            if(fromType == 2 && toType == 10){ // Двоична към Десетична
+                var result = 0
+                for (let i = 0; i < number.length; i++) {
+                    var j = number.length - i - 1;
+                    result += Math.pow(2, i) * number[j]
+                }
+                return result
+            }
+        }
+    </script>
+</body>
+</html>
